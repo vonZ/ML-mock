@@ -9,7 +9,7 @@ var timerAndImageLoader = require('foundation/foundation.util.timerAndImageLoade
 var orbit = require('foundation/foundation.orbit');
 var reveal = require('foundation/foundation.reveal');
 var datepicker = require('nodeModulesPath/foundation-datepicker/js/foundation-datepicker');
-var customRevealModal = require('Components/common/CustomRevealModal');
+var customRevealModal = require('GlobalExtensions/CustomRevealModal/CustomRevealModal');
 
 $.fn.foundation = foundation;
 

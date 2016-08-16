@@ -13,7 +13,7 @@
     "gulp-debug": "gulp debug",
     "watch-all": "npm-run-all gulp-debug"
   },
-  "author": "Cory House",
+  "author": "Viktor von Zeipel",
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "6.8.0",
@@ -93,6 +93,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/coryhouse/pluralsight-redux-starter"
+    "url": "https://github.com/vonZ/ML-mock"
   }
 }

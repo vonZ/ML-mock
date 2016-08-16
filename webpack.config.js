@@ -12,8 +12,12 @@ export default {
       alias: {
           nodeModulesPath: path.resolve(nodeModulesPath),
           mainPath: path.resolve(mainPath),
-          Components: path.resolve(mainPath, 'components'),
           foundation: path.resolve(nodeModulesPath, 'foundation-sites/js'),
+          mockApi: path.resolve(mainPath, 'api'),
+          GlobalExtensions: path.resolve(mainPath, 'GlobalExtensions'),
+          Components: path.resolve(mainPath, 'components'),
+          ContainerComponent: path.resolve(mainPath, 'ContainerComponent'),
+          PresentationalComponent: path.resolve(mainPath, 'PresentationalComponent'),
           EntryPoints: path.resolve(mainPath, 'entrypoints'),
           Actions: path.resolve(mainPath, 'actions'),
           Store: path.resolve(mainPath, 'store'),
