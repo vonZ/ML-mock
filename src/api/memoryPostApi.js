@@ -48,7 +48,7 @@ class PostApi {
 
   //Save post
   static savePost(post) {
-    course = Object.assign({}, post); // to avoid manipulating object passed in.
+    post = Object.assign({}, post); // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
@@ -57,11 +57,11 @@ class PostApi {
           reject(`Text must be at least ${minPostTextLength} characters.`);
         }
         if (post.id) {
-          const existingPostIndex = posts.findIndex(a => a.id == course.id);
+          const existingPostIndex = posts.findIndex(a => a.id == post.id);
           posts.splice(existingPostIndex, 1, post);
         } else {
           //Just simulating creation here.
-          //The server would generate ids and watchHref's for new courses in a real app.
+          //The server would generate ids and watchHref's for new posts in a real app.
           //Cloning so copy returned is passed by value rather than by reference.
           post.id = generateId(post);
           posts.push(post);

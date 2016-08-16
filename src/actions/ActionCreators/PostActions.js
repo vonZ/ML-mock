@@ -8,7 +8,7 @@ export function loadPostsSuccess(posts) {
 }
 
 export function createPostSuccess(post) {
-  return {type: types.CREATE_COURSE_SUCCESS, post};
+  return {type: types.CREATE_POST_SUCCESS, post};
 }
 
 export function updatePostSuccess(post) {
@@ -30,8 +30,8 @@ export function savePost(post) {
   return function (dispatch, getState) {
     dispatch(beginAjaxCall());
     return memoryPostApi.savePost(post).then(post => {
-      post.id ? dispatch(updatePostSuccess(course)) :
-      dispatch(createCourseSuccess(post))
+      post.id ? dispatch(updatePostSuccess(post)) :
+      dispatch(createPostSuccess(post))
     }).catch(error => {
       dispatch(ajaxCallError());
       throw(error);

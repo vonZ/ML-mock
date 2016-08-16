@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import * as postActions from 'Actions/ActionCreators/PostActions';
-// import CourseList from './CourseList';
+import PostList from 'PresentationalComponent/PostList';
 
 class LisitingMemoryPost extends React.Component {
   constructor(props, context) {
@@ -27,6 +27,7 @@ class LisitingMemoryPost extends React.Component {
     return (
       <div>
         <h1>Memory posts</h1>
+        <PostList posts={posts} />
       </div>
     );
   }
