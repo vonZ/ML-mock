@@ -17,7 +17,7 @@ export default function postReducer(state = initialState.posts, action) {
       // Filters the items of the array from the states and returns
       // the list of courses expect the one that is beeing updated
       return [
-        ...state.filter(course => post.id !== action.post.id),
+        ...state.filter(post => post.id !== action.post.id),
         Object.assign({}, action.post)
       ];
 
