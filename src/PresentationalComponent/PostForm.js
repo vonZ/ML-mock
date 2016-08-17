@@ -1,5 +1,6 @@
 import React from 'react';
-import TextInput from '../components/common/TextInput';
+import TextInput from 'Components/common/TextInput';
+import TextAreaInput from 'Components/common/TextAreaInput';
 
 const PostForm = ({post, onSave, onChange, saving, errors}) => {
   return (
@@ -11,12 +12,12 @@ const PostForm = ({post, onSave, onChange, saving, errors}) => {
         onChange={onChange}
         errors={errors.title}/>
 
-      <TextInput
+      <TextAreaInput
         name="Text"
         label="Text"
-        value={post.Text}
         onChange={onChange}
-        errors={errors.Text}/>
+        value={post.Text}
+        error={errors.Text} />
 
       <TextInput
         name="Date"
