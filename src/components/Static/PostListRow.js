@@ -6,7 +6,8 @@ const PostListRow = ({post}) => {
         <tr>
           <td>{post.id}</td>
           <td>{post.Author}</td>
-          <td><Link to={'/memorypost/' + post.id}>{post.Text}</Link></td>
+          <td>{post.Text}</td>
+          <td><Link to={'/memorypost/' + post.id}>Edit</Link></td>
           <td>{post.Location}</td>
         </tr>
   );

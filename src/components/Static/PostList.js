@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import PostListRow from 'PresentationalComponent/PostListRow';
+import PostListRow from 'Static/PostListRow';
 
 const PostList = ({posts}) => {
   return (
@@ -9,6 +9,7 @@ const PostList = ({posts}) => {
           <th>&nbsp;</th>
           <th>Author</th>
           <th>Text</th>
+          <th>&nbsp;</th>
           <th>Location</th>
         </tr>
       </thead>

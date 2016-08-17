@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import * as postActions from 'Actions/ActionCreators/PostActions';
-import PostForm from 'PresentationalComponent/PostForm';
+import PostForm from 'Static/PostForm';
 import toastr from 'toastr';
 
 class ManageMemoryPost extends React.Component {
@@ -32,7 +32,6 @@ class ManageMemoryPost extends React.Component {
   updatePostState(event) {
     const field = event.target.name;
     let post = this.state.post;
-    console.log("post: ", post);
     post[field] = event.target.value;
     return this.setState({post: post});
   }

@@ -1,5 +1,5 @@
-import * as types from '../actions/actionTypes';
-import initialState from './initialState';
+import * as types from 'Actions/ActionTypes/ActionTypes';
+import initialState from 'Reducers/initialState';
 
 function actionTypeEndsInSuccess(type) {
   return type.substring(type.length - 8) == '_SUCCESS';
