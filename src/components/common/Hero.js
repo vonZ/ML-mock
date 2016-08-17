@@ -9,7 +9,7 @@ const Hero = ({imo, bgImage}) => {
       <div className="overflow-description">
           <div className="row">
               <div className="column">
-                  <div className="overflow-description__content">
+                  <div className="overflow-description__content text-center">
                       <h1 className="overflow-description__heading">Till minne av</h1>
                       <span className="overflow-description__main">{imo}</span>
                   </div>

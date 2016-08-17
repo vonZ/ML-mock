@@ -3,7 +3,8 @@ import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
-import LisitingMemoryPost from 'Container/ContainerListingMemoryPosts';
+// import LisitingMemoryPost from 'Container/ContainerListingMemoryPosts';
+import LisitingMemoryPost from 'Container/ContainerListPostMemoryPosts';
 import ManageMemoryPost from 'Container/ContainerManageMemoryPost';
 
 export default (

@@ -20,6 +20,7 @@ class LisitingMemoryPost extends React.Component {
 
       this.updatePostState = this.updatePostState.bind(this);
       this.savePost = this.savePost.bind(this);
+      this.returnFromModal = this.returnFromModal.bind(this);
   }
 
   componentWillReceiveProps(nextProps ) {
@@ -49,6 +50,11 @@ class LisitingMemoryPost extends React.Component {
         })
   }
 
+  returnFromModal(event) {
+    console.log("returnFromModal");
+    event.preventDefault();
+  }
+
   redirect() {
     this.setState({saving: false});
     toastr.success('Post was sucessfully saved');
@@ -73,12 +79,15 @@ class LisitingMemoryPost extends React.Component {
           <div className="row">
             <div className="columns">
               <div className="align-center">
-                <input  type="submit"
-                        value="Add Course"
-                        className="btn btn-primary"
-                        onClick={this.redirectToAddCoursePage}/>
-
-                <button data-open="js-form-reveal">Formulär</button>
+                <div className="align-center small-up-6 medium-up-6 large-up-6 row">
+                  <div className="column">
+                    <h3 className="text-center"><a data-open="js-form-reveal">Dela minne</a></h3>
+                  </div>
+                  <div className="column">
+                    <h3 className="text-center"><a data-open="js-form-reveal">Dela minne</a></h3>
+                  </div>
+                </div>
+                {/*<button className="btn btn-primary" data-open="js-form-reveal">Add memory</button>*/}
                 <div className="reveal reveal--custom-reveal" id="js-form-reveal" data-reveal>
                     <div className="form-container">
                         <h1>Add memory</h1>
@@ -86,6 +95,7 @@ class LisitingMemoryPost extends React.Component {
                           post={this.state.post}
                           onSave={this.savePost}
                           onChange={this.updatePostState}
+                          onClose={this.returnFromModal}
                           saving={this.state.saving}
                           errors={this.state.errors}
                         />

@@ -39,6 +39,7 @@ const PostForm = ({post, onSave, onChange, saving, errors}) => {
         value={saving ? 'Saving...' : 'Save'}
         className="btn btn-primary"
         onClick={onSave}/>
+
     </form>
   );
 };

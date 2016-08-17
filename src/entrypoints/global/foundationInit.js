@@ -24,7 +24,7 @@ $(document).ready(function () {
     $(document).on('click', '[data-url]', function (e) {
         e.preventDefault();
         var $this = $(this);
-        var $modal = $('#post-reveal');
+        var $modal = $('.js-form-reveal');
         var url = $this.attr("data-url");
         console.log("url: ", url);
 

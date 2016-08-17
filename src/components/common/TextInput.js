@@ -22,6 +22,7 @@ const TextInput = ({name, label, onChange, placeholder, value, error}) => {
         <input
           type="text"
           name={name}
+          autofocus
           className={inputClass}
           placeholder={placeholder}
           value={value}

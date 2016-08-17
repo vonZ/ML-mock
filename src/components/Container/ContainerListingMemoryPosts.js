@@ -31,7 +31,7 @@ class LisitingMemoryPost extends React.Component {
             <div className="columns">
               <div className="align-center">
                 <input  type="submit"
-                        value="Add Course"
+                        value="Posta ett inlägg"
                         className="btn btn-primary"
                         onClick={this.redirectToAddCoursePage}/>
                 <PostList posts={posts} />

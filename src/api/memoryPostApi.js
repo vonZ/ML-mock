@@ -5,7 +5,7 @@ const posts = [
     id: 1,
     Author: "Rubrik",
     Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    Image: null,
+    ImageUrl: "https://bytebucket.org/memryline/memryline.web/raw/1f6e82b1ae07c9824a3dd0cea143d861c4571029/Memryline/Resources/Images/1.jpg?token=e663a6df120e5d0bb7f79b42fce42a8762dcc468",
     Date: "02-09-1989",
     Location: "Stockholm"
   },
@@ -13,7 +13,7 @@ const posts = [
     id: 2,
     Author: "Rubrik",
     Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    Image: null,
+    ImageUrl: "https://bytebucket.org/memryline/memryline.web/raw/1f6e82b1ae07c9824a3dd0cea143d861c4571029/Memryline/Resources/Images/1.jpg?token=e663a6df120e5d0bb7f79b42fce42a8762dcc468",
     Date: "02-09-1989",
     Location: "Stockholm"
   },
@@ -21,7 +21,7 @@ const posts = [
     id: 3,
     Author: "Rubrik",
     Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    Image: null,
+    ImageUrl: "https://bytebucket.org/memryline/memryline.web/raw/1f6e82b1ae07c9824a3dd0cea143d861c4571029/Memryline/Resources/Images/1.jpg?token=e663a6df120e5d0bb7f79b42fce42a8762dcc468",
     Date: "02-09-1989",
     Location: "Stockholm"
   },
@@ -29,7 +29,7 @@ const posts = [
     id: 4,
     Author: "Rubrik",
     Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    Image: null,
+    ImageUrl: "https://bytebucket.org/memryline/memryline.web/raw/1f6e82b1ae07c9824a3dd0cea143d861c4571029/Memryline/Resources/Images/1.jpg?token=e663a6df120e5d0bb7f79b42fce42a8762dcc468",
     Date: "02-09-1989",
     Location: "Stockholm"
   },
@@ -37,7 +37,7 @@ const posts = [
     id: 5,
     Author: "Rubrik",
     Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    Image: null,
+    ImageUrl: "https://bytebucket.org/memryline/memryline.web/raw/1f6e82b1ae07c9824a3dd0cea143d861c4571029/Memryline/Resources/Images/1.jpg?token=e663a6df120e5d0bb7f79b42fce42a8762dcc468",
     Date: "02-09-1989",
     Location: "Stockholm"
   },
@@ -45,7 +45,7 @@ const posts = [
     id: 6,
     Author: "Rubrik",
     Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    Image: null,
+    ImageUrl: "https://bytebucket.org/memryline/memryline.web/raw/1f6e82b1ae07c9824a3dd0cea143d861c4571029/Memryline/Resources/Images/1.jpg?token=e663a6df120e5d0bb7f79b42fce42a8762dcc468",
     Date: "02-09-1989",
     Location: "Stockholm"
   }
