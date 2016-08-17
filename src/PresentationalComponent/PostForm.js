@@ -1,33 +1,32 @@
 import React from 'react';
 import TextInput from '../components/common/TextInput';
-import SelectInput from '../components/common/SelectInput';
 
-const PostForm = ({post, allPosts, onSave, onChange, saving, errors}) => {
+const PostForm = ({post, onSave, onChange, saving, errors}) => {
   return (
     <form>
       <TextInput
-        name="author"
+        name="Author"
         label="Author"
         value={post.Author}
         onChange={onChange}
         errors={errors.title}/>
 
       <TextInput
-        name="text"
+        name="Text"
         label="Text"
         value={post.Text}
         onChange={onChange}
         errors={errors.Text}/>
 
       <TextInput
-        name="date"
+        name="Date"
         label="Date"
         value={post.Date}
         onChange={onChange}
         error={errors.Date}/>
 
       <TextInput
-        name="location"
+        name="Location"
         label="Location"
         value={post.Location}
         onChange={onChange}
@@ -45,7 +44,6 @@ const PostForm = ({post, allPosts, onSave, onChange, saving, errors}) => {
 
 PostForm.propTypes = {
   post: React.PropTypes.object.isRequired,
-  allPosts: React.PropTypes.array,
   onSave: React.PropTypes.func.isRequired,
   onChange: React.PropTypes.func.isRequired,
   saving: React.PropTypes.bool,

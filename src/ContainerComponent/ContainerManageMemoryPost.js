@@ -32,6 +32,7 @@ class ManageMemoryPost extends React.Component {
   updatePostState(event) {
     const field = event.target.name;
     let post = this.state.post;
+    console.log("post: ", post);
     post[field] = event.target.value;
     return this.setState({post: post});
   }
@@ -43,8 +44,6 @@ class ManageMemoryPost extends React.Component {
         .then(() => this.redirect())
         .catch(error => {
           toastr.error(error);
-          console.log("this.state.post: ", this.state.post);
-          console.log("error: ", error);
           this.setState({saving: false});
         })
   }
@@ -62,15 +61,16 @@ class ManageMemoryPost extends React.Component {
   render() {
     return (
       <div>
-        <h1>ContainerManageMemoryPost</h1>
-        <p>Edit specific memory post</p>
+        <input  type="submit"
+                value="Tillbaka"
+                className="btn"
+                onClick={this.redirectToCoursePage}/>
         <PostForm
-          allPosts={this.props.posts}
-          onChange={this.updatePostState}
-          onSave={this.savePost}
           post={this.state.post}
-          errors={this.state.errors}
+          onSave={this.savePost}
+          onChange={this.updatePostState}
           saving={this.state.saving}
+          errors={this.state.errors}
         />
       </div>
     );

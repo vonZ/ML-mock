@@ -25,7 +25,7 @@ class ManageCoursePage extends React.Component {
 
   componentWillReceiveProps(nextProps ) {
     // When we are getting new courses via props, then run update the state
-    // Don´t want to overwriting the state 
+    // Don´t want to overwriting the state
     if (this.props.course.id != nextProps.course.id) {
       // Necessary to populate form when existing course is loaded directly
       this.setState({course: Object.assign({}, nextProps.course)});
@@ -35,6 +35,7 @@ class ManageCoursePage extends React.Component {
   updateCourseState(event) {
     const field = event.target.name;
     let course = this.state.course;
+    console.log("course: ", course);
     course[field] = event.target.value;
     return this.setState({course: course});
   }
