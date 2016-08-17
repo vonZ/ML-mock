@@ -11,9 +11,9 @@ export default (
     // Home page
     <IndexRoute component={HomePage} />
     // MemoryPost page
-    <Route path="memoryposts" component={LisitingMemoryPost} />
-    <Route path="memorypost" component={ManageMemoryPost} />
-    <Route path="memorypost/:id" component={ManageMemoryPost} />
+    <Route path="posts" component={LisitingMemoryPost} />
+    <Route path="post" component={ManageMemoryPost} />
+    <Route path="post/:id" component={ManageMemoryPost} />
     // About page
     <Route path="about" component={AboutPage} />
   </Route>

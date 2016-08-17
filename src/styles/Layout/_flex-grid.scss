@@ -1,0 +1,22 @@
+﻿@include foundation-flex-classes;
+@include foundation-flex-grid;
+
+
+@include breakpoint(small) {
+    .small-half-offset {
+        margin-#{$global-left}: grid-column(1/($grid-column-count*2));
+    }
+}
+
+@include breakpoint(medium) {
+    .medium-half-offset {
+        margin-#{$global-left}: grid-column(1/($grid-column-count*2));
+    }
+}
+
+@include breakpoint(large) {
+    .large-half-offset {
+        margin-#{$global-left}: grid-column(1/($grid-column-count*2));
+    }
+}
+

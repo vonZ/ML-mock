@@ -3,22 +3,11 @@ import PostListRow from 'Static/PostListRow';
 
 const PostList = ({posts}) => {
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th>&nbsp;</th>
-          <th>Author</th>
-          <th>Text</th>
-          <th>&nbsp;</th>
-          <th>Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        {posts.map(post =>
-          <PostListRow key={post.id} post={post} />
-        )}
-      </tbody>
-    </table>
+    <div className="post-container small-up-1 medium-up-2 large-up-3 row">
+      {posts.map(post =>
+        <PostListRow key={post.id} post={post} />
+      )}
+    </div>
   );
 };
 

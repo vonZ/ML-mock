@@ -32,8 +32,34 @@ const posts = [
     Image: null,
     Date: "02-09-1989",
     Location: "Stockholm"
+  },
+  {
+    id: 5,
+    Author: "Rubrik",
+    Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+    Image: null,
+    Date: "02-09-1989",
+    Location: "Stockholm"
+  },
+  {
+    id: 6,
+    Author: "Rubrik",
+    Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+    Image: null,
+    Date: "02-09-1989",
+    Location: "Stockholm"
   }
 ];
+
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(find, 'g'), replace);
+}
+
+//This would be performed on the server in a real app. Just stubbing in.
+const generateId = (post) => {
+  return replaceAll(post.Author, ' ', '-');
+};
+
 
 class PostApi {
 
@@ -45,7 +71,6 @@ class PostApi {
       }, delay);
     });
   }
-
   //Save post
   static savePost(post) {
     post = Object.assign({}, post); // to avoid manipulating object passed in.

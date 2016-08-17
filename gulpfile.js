@@ -32,14 +32,14 @@ var sassExternalSourcesPaths = [
 ];
 
 var stylingResourcesPaths = [
-	'Resources/Images/**/*',
-	'Resources/Fonts/**/*'
+	'Src/Images/**/*',
+	'Src/Fonts/**/*'
 ];
 
 // Tasks
 gulp.task('sass:debug', function () {
     return gulp.src(sassSourcesPaths)
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(sass({
 		    includePaths: sassExternalSourcesPaths
 		})

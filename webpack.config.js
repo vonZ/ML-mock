@@ -11,6 +11,7 @@ export default {
       extensions: ['', '.js', '.jsx', '.json'],
       alias: {
           nodeModulesPath: path.resolve(nodeModulesPath),
+          distPath: path.resolve(__dirname, 'dist'),
           mainPath: path.resolve(mainPath),
           foundation: path.resolve(nodeModulesPath, 'foundation-sites/js'),
           mockApi: path.resolve(mainPath, 'Api'),

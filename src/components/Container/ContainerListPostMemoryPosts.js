@@ -3,21 +3,23 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import * as postActions from 'Actions/ActionCreators/PostActions';
+import PostList from 'Static/PostList';
 import PostForm from 'Static/PostForm';
 import toastr from 'toastr';
 
-class ManageMemoryPost extends React.Component {
+class LisitingMemoryPost extends React.Component {
   constructor(props, context) {
-    super(props, context);
+      super(props, context);
+      // this.redirectToAddPostPage = this.redirectToAddPostPage.bind(this);
 
-    this.state = {
-      post: Object.assign({}, this.props.post),
-      errors: {},
-      saving: false
-    };
+      this.state = {
+        post: Object.assign({}, this.props.post),
+        errors: {},
+        saving: false
+      };
 
-    this.updatePostState = this.updatePostState.bind(this);
-    this.savePost = this.savePost.bind(this);
+      this.updatePostState = this.updatePostState.bind(this);
+      this.savePost = this.savePost.bind(this);
   }
 
   componentWillReceiveProps(nextProps ) {
@@ -50,39 +52,62 @@ class ManageMemoryPost extends React.Component {
   redirect() {
     this.setState({saving: false});
     toastr.success('Post was sucessfully saved');
-    this.context.router.push('/posts');
   }
 
-  redirectToCoursePage() {
-    browserHistory.push('/posts');
+  postItem(post, index) {
+    return <div key={index}>{post.Text}</div>;
   }
 
+  redirectToAddCoursePage() {
+    browserHistory.push('/post');
+  }
+
+  /**
+    Render functions
+  **/
   render() {
+    const {posts} = this.props;
     return (
       <div>
-        <input  type="submit"
-                value="Tillbaka"
-                className="btn"
-                onClick={this.redirectToCoursePage}/>
-        <PostForm
-          post={this.state.post}
-          onSave={this.savePost}
-          onChange={this.updatePostState}
-          saving={this.state.saving}
-          errors={this.state.errors}
-        />
+        <section className="add-memory">
+          <div className="row">
+            <div className="columns">
+              <div className="align-center">
+                <input  type="submit"
+                        value="Add Course"
+                        className="btn btn-primary"
+                        onClick={this.redirectToAddCoursePage}/>
+
+                <button data-open="js-form-reveal">Formulär</button>
+                <div className="reveal reveal--custom-reveal" id="js-form-reveal" data-reveal>
+                    <div className="form-container">
+                        <h1>Add memory</h1>
+                        <PostForm
+                          post={this.state.post}
+                          onSave={this.savePost}
+                          onChange={this.updatePostState}
+                          saving={this.state.saving}
+                          errors={this.state.errors}
+                        />
+                    </div>
+                </div>
+                <PostList posts={posts} />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
 }
 
-ManageMemoryPost.propTypes = {
+/**
+  Prop types
+**/
+LisitingMemoryPost.propTypes = {
   post: PropTypes.object.isRequired,
+  posts: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
-};
-
-ManageMemoryPost.contextTypes = {
-  router: PropTypes.object
 };
 
 function getPostById(posts, id) {
@@ -91,6 +116,9 @@ function getPostById(posts, id) {
   return null;
 }
 
+/**
+  Redux connect and related functions
+**/
 function mapStateToProps(state, ownProps) {
   const postId = ownProps.params.id; // from the path '/memorypost/:id'
   let post = {id: '', Author: '', Text: '', Image: null, Date: '', Location: ''};
@@ -98,8 +126,8 @@ function mapStateToProps(state, ownProps) {
   if (postId && state.posts.length > 0) {
     post = getPostById(state.posts, postId);
   }
-
   return {
+    posts: state.posts, //from the rootReducer
     post: post
   };
 }
@@ -110,4 +138,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageMemoryPost);
+export default connect(mapStateToProps, mapDispatchToProps)(LisitingMemoryPost);

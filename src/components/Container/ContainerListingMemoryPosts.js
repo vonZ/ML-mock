@@ -16,7 +16,7 @@ class LisitingMemoryPost extends React.Component {
   }
 
   redirectToAddCoursePage() {
-    browserHistory.push('/memorypost');
+    browserHistory.push('/post');
   }
 
   /**
@@ -26,8 +26,19 @@ class LisitingMemoryPost extends React.Component {
     const {posts} = this.props;
     return (
       <div>
-        <h1>Memory posts</h1>
-        <PostList posts={posts} />
+        <section className="add-memory">
+          <div className="row">
+            <div className="columns">
+              <div className="align-center">
+                <input  type="submit"
+                        value="Add Course"
+                        className="btn btn-primary"
+                        onClick={this.redirectToAddCoursePage}/>
+                <PostList posts={posts} />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

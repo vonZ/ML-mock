@@ -1,0 +1,153 @@
+@import "colors.scss";  
+@include foundation-form-text;
+@include foundation-reveal;
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+@mixin overflow-gradient($color, $height) { 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: $height;
+    color: #fff;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 20px;
+    background-image: linear-gradient(to bottom, transparent 5%, $color 80%);
+}
+
+
+/*REFACTOR: mixin*/
+.padding-2 {
+    padding: 2rem; 
+}
+
+.padding-v-2 {
+    padding: 2rem 0; 
+}
+
+.padding-h-2 {
+    padding: 0rem 2rem; 
+}
+
+.add-memory {
+    background-color: $add-memory-bg;
+}
+
+ .hero-section {
+    height: 500px;
+    position: relative;
+    /*REFACTOR: mixin*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+ }
+
+ .overflow-description {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 20px;
+    /*REFACTOR: mixin*/
+    background-image: linear-gradient(to bottom, transparent 5%, rgba(0, 0, 0, 0.8) 80%);
+
+     &__content  {
+        /*REFACTOR: mixin*/
+        padding: 20px 0px;
+     }
+
+     &__heading {
+        color: white;
+        /*REFACTOR: mixin*/
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+     }
+
+     &__main {
+         font-weight: 400; 
+     }
+ }
+
+ .post-container {
+    margin: 20px auto;
+
+     &__comment {
+        position: relative;
+        background: $white;
+        /*height: 600px;*/
+        margin: 10px auto;
+        /*border: 0.1rem solid $lightGray;*/
+        border: 1px solid #e6e6e6;
+        /*box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px 1px;*/
+
+
+        /*&:hover {
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 1px;
+        }*/
+     }
+
+     &__right-pane {
+         position: relative; 
+     }
+
+     &__left-pane {
+        max-height: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;        
+     }
+
+     &__collapsed {
+         @include overflow-gradient($white, 100px);
+     }
+
+     &__footer {
+        margin: 0 !important; 
+        border-top: 1px solid #e6e6e6;
+        padding: 5px 0px;
+        font-weight: 400;
+        text-transform: uppercase;
+     }
+
+     &__column {
+        background: $white;
+        padding: 10px;
+     }
+ }
+
+ .background-image {
+    min-height: 300px;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--s {
+        min-height: 220px;
+    }
+ }
+
+
+ //Reveal component
+ .reveal-overlay {
+
+     &--custom-reveal-overlay { 
+        z-index: 1100;
+     }
+ }
+
+ .reveal {
+     &--custom-reveal {
+        margin-right: 0px;
+        height: 100%;
+        position: initial;
+
+        &:focus {
+            outline: none; 
+        }
+     }
+ }

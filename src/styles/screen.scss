@@ -1,0 +1,48 @@
+/******
+	|-- Main SASS - file --|
+
+		* Imports all partials
+
+	|----------------------|
+******/
+
+/*@font-face {
+	font-family: 'Diavlo_MEDIUM_II_37';
+    src: url('../fonts/Diavlo_MEDIUM_II_37.otf');
+}
+
+@font-face {
+	font-family: 'Diavlo_BOOK_II_37';
+    src: url('../fonts/Diavlo_BOOK_II_37.otf');
+}*/
+
+
+// Just for mock purpose
+.row {
+	margin: auto !important;
+}
+
+h1, h2, p, a, span {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+
+// Expose Foundation's mixins, functions etc
+@import 'foundation';
+
+@import 'motion-ui';
+
+/*Base*/
+@import "base/_base.scss";
+
+/*Components*/
+@import "components/_baseComponents.scss";
+
+/*Helpers*/
+@import "helpers/_mixins.scss";
+
+/*Layout*/
+@import 'Layout/all';
+
+/*Views*/
+@import "views/_homePage.scss";
