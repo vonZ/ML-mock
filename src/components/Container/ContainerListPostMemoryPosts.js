@@ -1,3 +1,11 @@
+/***
+*
+* Combined container
+* - Form
+* - Listing
+*
+***/
+
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -10,7 +18,6 @@ import toastr from 'toastr';
 class LisitingMemoryPost extends React.Component {
   constructor(props, context) {
       super(props, context);
-      // this.redirectToAddPostPage = this.redirectToAddPostPage.bind(this);
 
       this.state = {
         post: Object.assign({}, this.props.post),
@@ -20,7 +27,6 @@ class LisitingMemoryPost extends React.Component {
 
       this.updatePostState = this.updatePostState.bind(this);
       this.savePost = this.savePost.bind(this);
-      this.returnFromModal = this.returnFromModal.bind(this);
   }
 
   componentWillReceiveProps(nextProps ) {
@@ -50,11 +56,6 @@ class LisitingMemoryPost extends React.Component {
         })
   }
 
-  returnFromModal(event) {
-    console.log("returnFromModal");
-    event.preventDefault();
-  }
-
   redirect() {
     this.setState({saving: false});
     toastr.success('Post was sucessfully saved');
@@ -80,22 +81,24 @@ class LisitingMemoryPost extends React.Component {
             <div className="columns">
               <div className="align-center">
                 <div className="align-center small-up-6 medium-up-6 large-up-6 row">
-                  <div className="column">
-                    <h3 className="text-center"><a data-open="js-form-reveal">Dela minne</a></h3>
-                  </div>
-                  <div className="column">
-                    <h3 className="text-center"><a data-open="js-form-reveal">Dela minne</a></h3>
+                  <div className="column text-center padding-v-2">
+                      <input
+                        type="submit"
+                        value="Dela ett minne"
+                        data-open="js-form-reveal"
+                        onClick={this.redirectToAddCoursePage}
+                      />
                   </div>
                 </div>
-                {/*<button className="btn btn-primary" data-open="js-form-reveal">Add memory</button>*/}
-                <div className="reveal reveal--custom-reveal" id="js-form-reveal" data-reveal>
+                {/*<RevealRightModal
+                />*/}
+              <div className="reveal reveal--custom-reveal js-form-reveal" id="js-form-reveal" data-reveal>
                     <div className="form-container">
                         <h1>Add memory</h1>
                         <PostForm
                           post={this.state.post}
                           onSave={this.savePost}
                           onChange={this.updatePostState}
-                          onClose={this.returnFromModal}
                           saving={this.state.saving}
                           errors={this.state.errors}
                         />
@@ -131,13 +134,26 @@ function getPostById(posts, id) {
 **/
 function mapStateToProps(state, ownProps) {
   const postId = ownProps.params.id; // from the path '/memorypost/:id'
-  let post = {id: '', Author: '', Text: '', Image: null, Date: '', Location: ''};
+  let post = {id: '', heading: '', postContent: '', imageSrc: null, date: '', location: ''};
+
+  //Create local constanst from the api. If api changes, only these constants needs to be changed
+  const localDataConstants = state.posts.map(post => {
+    return {
+      id: post.id,
+      heading: post.heading,
+      postContent: post.postContent,
+      imageSrc: post.imageSrc,
+      date: post.date,
+      location: post.location
+    };
+  });
 
   if (postId && state.posts.length > 0) {
     post = getPostById(state.posts, postId);
   }
   return {
-    posts: state.posts, //from the rootReducer
+    // posts: state.posts, //From the rootReducer
+    posts: localDataConstants,
     post: post
   };
 }

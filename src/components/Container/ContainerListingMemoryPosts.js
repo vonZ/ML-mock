@@ -4,6 +4,8 @@ import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import * as postActions from 'Actions/ActionCreators/PostActions';
 import PostList from 'Static/PostList';
+import RevealRightModal from 'Common/RevealRightModal';
+import ManageMemoryPost from 'Container/ContainerManageMemoryPost';
 
 class LisitingMemoryPost extends React.Component {
   constructor(props, context) {
@@ -29,11 +31,19 @@ class LisitingMemoryPost extends React.Component {
         <section className="add-memory">
           <div className="row">
             <div className="columns">
-              <div className="align-center">
-                <input  type="submit"
-                        value="Posta ett inlägg"
-                        className="btn btn-primary"
-                        onClick={this.redirectToAddCoursePage}/>
+              <div className="padding-v-2">
+                <div className="align-center small-up-12 medium-up-6 large-up-6 row">
+                  <div className="column padding-v-2 ">
+                    <a data-open="js-form-reveal">Dela minne</a>
+                  </div>
+                  <div className="column padding-v-2 ">
+                      <input  type="submit"
+                              value="Posta ett inlägg"
+                              onClick={this.redirectToAddCoursePage}
+                      />
+                  </div>
+                </div>
+                <RevealRightModal />
                 <PostList posts={posts} />
               </div>
             </div>

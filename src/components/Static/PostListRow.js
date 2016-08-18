@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 
 const PostListRow = ({post}) => {
   const bgImgStyle = {
-    backgroundImage: 'url(' + post.ImageUrl + ')'
+    backgroundImage: 'url(' + post.imageSrc + ')'
   }
   const cardLayout = false;
   return (
@@ -14,10 +14,10 @@ const PostListRow = ({post}) => {
                        <div className="overflow-description">
                            <div className="overflow-description__content row">
                                <div className="column align-self-bottom">
-                                   <span className="overflow-description__heading">{post.Location}</span>
+                                   <span className="overflow-description__heading">{post.location}</span>
                                </div>
                                <div className="column align-self-middle text-right">
-                                   <span className="overflow-description__main">{post.Date}</span>
+                                   <span className="overflow-description__main">{post.date}</span>
                                </div>
                            </div>
                        </div>
@@ -29,11 +29,20 @@ const PostListRow = ({post}) => {
                <div className={cardLayout ? 'hidden' : null}>
                  <div className="medium-12">
                      <div className="padding-2 post-container__left-pane">
-                         <p className="text-center">{post.Location}</p>
-                         <h2 className="text-center commentAuthor">
-                             {post.Author}
-                         </h2>
+                       <p className="text-center">{post.location}</p>
+                       <h2 className="text-center commentAuthor">
+                           {post.heading}
+                       </h2>
                      </div>
+
+                     {/*PostRow listing example with visible text*/}
+
+                     {/*<div className="padding-2">
+                       <h2 className="text-center">{post.Author}</h2>
+                       <p className="text-center">
+                           {post.Text}
+                       </p>
+                     </div>*/}
                  </div>
                  <div className="medium-12">
                      <div className="post-container__footer row text-center">
@@ -41,7 +50,7 @@ const PostListRow = ({post}) => {
                              <a href="">Ladda ner</a>
                          </div>
                          <div className="column post-container__column">
-                             <Link to={'/post/' + post.id}>Redigera</Link>
+                             <Link to={'/post/' + post.id} data-open="js-form-reveal">Redigera</Link>
                          </div>
                          <div className="column post-container__column">
                              <a data-open="post-reveal" data-url="/Resources/Constants/PostItemMock.json" className="js-async-ajax">Läs mer</a>

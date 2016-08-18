@@ -1,10 +1,10 @@
-@import "colors.scss";  
+@import "colors.scss";
 @include foundation-form-text;
 @include foundation-reveal;
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-@mixin overflow-gradient($color, $height) { 
+@mixin overflow-gradient($color, $height) {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -20,15 +20,15 @@
 
 /*REFACTOR: mixin*/
 .padding-2 {
-    padding: 2rem; 
+    padding: 2rem;
 }
 
 .padding-v-2 {
-    padding: 2rem 0; 
+    padding: 2rem 0;
 }
 
 .padding-h-2 {
-    padding: 0rem 2rem; 
+    padding: 0rem 2rem;
 }
 
 .add-memory {
@@ -70,7 +70,7 @@
      }
 
      &__main {
-         font-weight: 400; 
+         font-weight: 400;
      }
  }
 
@@ -93,13 +93,13 @@
      }
 
      &__right-pane {
-         position: relative; 
+         position: relative;
      }
 
      &__left-pane {
         max-height: 300px;
         overflow: hidden;
-        text-overflow: ellipsis;        
+        text-overflow: ellipsis;
      }
 
      &__collapsed {
@@ -107,7 +107,7 @@
      }
 
      &__footer {
-        margin: 0 !important; 
+        margin: 0 !important;
         border-top: 1px solid #e6e6e6;
         padding: 5px 0px;
         font-weight: 400;
@@ -135,7 +135,7 @@
  //Reveal component
  .reveal-overlay {
 
-     &--custom-reveal-overlay { 
+     &--custom-reveal-overlay {
         z-index: 1100;
      }
  }
@@ -147,7 +147,7 @@
         position: initial;
 
         &:focus {
-            outline: none; 
+            outline: none;
         }
      }
  }

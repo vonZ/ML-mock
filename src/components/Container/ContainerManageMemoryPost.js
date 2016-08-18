@@ -93,7 +93,7 @@ function getPostById(posts, id) {
 
 function mapStateToProps(state, ownProps) {
   const postId = ownProps.params.id; // from the path '/memorypost/:id'
-  let post = {id: '', Author: '', Text: '', Image: null, Date: '', Location: ''};
+  let post = {id: '', heading: '', postContent: '', imageSrc: null, date: '', location: ''};
 
   if (postId && state.posts.length > 0) {
     post = getPostById(state.posts, postId);

@@ -11,7 +11,7 @@ const TextInput = ({name, label, onChange, placeholder, value, error}) => {
     wrapperClass += " " + 'has-error';
   }
 
-  if (name == "Date") {
+  if (name == "date") {
     inputClass += " " + 'js-datepicker';
   }
 

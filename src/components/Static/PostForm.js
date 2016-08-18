@@ -6,32 +6,32 @@ const PostForm = ({post, onSave, onChange, saving, errors}) => {
   return (
     <form>
       <TextInput
-        name="Author"
-        label="Author"
-        value={post.Author}
+        name="heading"
+        label="Rubrik"
+        value={post.heading}
         onChange={onChange}
-        errors={errors.title}/>
+        errors={errors.heading}/>
 
       <TextAreaInput
-        name="Text"
-        label="Text"
+        name="postContent"
+        label="Beskrivande text"
         onChange={onChange}
-        value={post.Text}
-        error={errors.Text} />
+        value={post.postContent}
+        error={errors.text} />
 
       <TextInput
-        name="Date"
-        label="Date"
-        value={post.Date}
+        name="date"
+        label="Datum"
+        value={post.date}
         onChange={onChange}
-        error={errors.Date}/>
+        error={errors.date}/>
 
       <TextInput
-        name="Location"
-        label="Location"
-        value={post.Location}
+        name="location"
+        label="Plats"
+        value={post.location}
         onChange={onChange}
-        error={errors.Location}/>
+        error={errors.location}/>
 
       <input
         type="submit"

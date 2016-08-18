@@ -14,12 +14,10 @@ var customRevealModal = require('GlobalExtensions/CustomRevealModal/CustomReveal
 $.fn.foundation = foundation;
 
 $(document).ready(function () {
-
     $(document).foundation();
-
     console.log("foundation init");
-
     customRevealModal.init();
+
 
     $(document).on('click', '[data-url]', function (e) {
         e.preventDefault();
