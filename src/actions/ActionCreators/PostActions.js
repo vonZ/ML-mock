@@ -1,7 +1,7 @@
 import * as types from 'Actions/ActionTypes/ActionTypes';
 import memoryPostApi from 'mockApi/memoryPostApi';
-import {beginAjaxCall} from 'Actions/ActionCreators/ajaxStatusActions';
-import {ajaxCallError} from 'Actions/ActionCreators/ajaxStatusActions';
+import {beginAjaxCall} from 'Actions/ActionCreators/AjaxStatusActions';
+import {ajaxCallError} from 'Actions/ActionCreators/AjaxStatusActions';
 
 export function loadPostsSuccess(posts) {
   return {type: types.LOAD_POSTS_SUCCESS, posts};

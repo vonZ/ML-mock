@@ -2,11 +2,13 @@
 
 import {combineReducers} from 'redux';
 import posts from 'Reducers/postReducer';
-import ajaxCallsInProgess from './ajaxStatusReducer';
+import ajaxCallsInProgess from 'Reducers/ajaxStatusReducer';
+import revealStatus from 'Reducers/revealStatusReducer';
 
 const rootReducer = combineReducers ({
   posts,
-  ajaxCallsInProgess
+  ajaxCallsInProgess,
+  revealStatus
 });
 
 export default rootReducer;

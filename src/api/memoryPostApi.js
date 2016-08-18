@@ -79,7 +79,7 @@ class PostApi {
         // Simulate server-side validation
         const minPostContent = 1;
         if (post.postContent.length < minPostContent) {
-          reject(`Text must be at least ${minPostTextLength} characters.`);
+          reject(`Text must be at least ${minPostContent} characters.`);
         }
         if (post.id) {
           const existingPostIndex = posts.findIndex(a => a.id == post.id);

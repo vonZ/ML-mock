@@ -11,7 +11,7 @@ const Hero = ({}) => {
               <div className="column">
                   <div className="overflow-description__content text-center">
                       <h1 className="overflow-description__heading">Till minne av</h1>
-                      <span className="overflow-description__main">Per H Jonsson</span>
+                      <span className="overflow-description__main">John Doe</span>
                   </div>
               </div>
           </div>
