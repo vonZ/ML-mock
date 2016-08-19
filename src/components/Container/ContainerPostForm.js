@@ -7,7 +7,7 @@ import PostList from 'Static/PostList';
 import RevealRightModal from 'Common/RevealRightModal';
 import ManageMemoryPost from 'Container/ContainerManageMemoryPost';
 
-class LisitingMemoryPost extends React.Component {
+class PostForm  extends React.Component {
   constructor(props, context) {
       super(props, context);
       // this.redirectToAddPostPage = this.redirectToAddPostPage.bind(this);
@@ -33,7 +33,7 @@ class LisitingMemoryPost extends React.Component {
 /**
   Prop types
 **/
-LisitingMemoryPost.propTypes = {
+PostForm.propTypes = {
   posts: PropTypes.array.isRequired
 };
 
@@ -52,4 +52,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LisitingMemoryPost);
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

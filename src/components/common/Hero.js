@@ -10,7 +10,7 @@ const Hero = ({}) => {
           <div className="row">
               <div className="column">
                   <div className="overflow-description__content text-center">
-                      <h1 className="overflow-description__heading">Till minne av</h1>
+                      <h1 className="overflow-description__heading">Lorem Ipsum</h1>
                       <span className="overflow-description__main">John Doe</span>
                   </div>
               </div>

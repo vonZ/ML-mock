@@ -18,7 +18,6 @@ $(document).ready(function () {
     console.log("foundation init");
     customRevealModal.init();
 
-
     $(document).on('click', '[data-url]', function (e) {
         e.preventDefault();
         var $this = $(this);

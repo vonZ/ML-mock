@@ -32,19 +32,23 @@ class LisitingMemoryPost extends React.Component {
 
       this.updatePostState = this.updatePostState.bind(this);
       this.savePost = this.savePost.bind(this);
-      this.revealStatus = this.revealStatus.bind(this);
-
+      this.openReveal = this.openReveal.bind(this);
   }
 
   componentWillReceiveProps(nextProps ) {
     // When we are getting new posts via props, then run update the state
     // Don´t want to overwriting the state
     if (this.props.post.id != nextProps.post.id) {
+      this.setState({revealStatus: true});
+      console.log("this.state.revealStatus: ", this.state.revealStatus);
       // Necessary to populate form when existing post is loaded directly
       this.setState({post: Object.assign({}, nextProps.post)});
     }
   }
 
+  redirectToAddMemoryPost() {
+    browserHistory.push('/add-post');
+  }
 
   updatePostState(event) {
     const field = event.target.name;
@@ -57,8 +61,6 @@ class LisitingMemoryPost extends React.Component {
   savePost(event) {
     event.preventDefault();
     this.setState({saving: true});
-    this.setState({revealStatus: true});
-    console.log("this.state.revealStatus: ", this.state.revealStatus);
     console.log("this.state.saving: ", this.state.saving);
 
     this.props.actions.savePost(this.state.post)
@@ -69,21 +71,25 @@ class LisitingMemoryPost extends React.Component {
         })
   }
 
+  onCloseReveal(event) {
+    event.preventDefault();
+    browserHistory.push('/posts');
+  }
+
+  openReveal() {
+    this.setState({revealStatus: true});
+  }
+
   redirect() {
     this.setState({saving: false});
+    this.setState({revealStatus: false});
+    console.log("revealStatus: ", this.state.revealStatus);
     toastr.success('Post was sucessfully saved');
+    browserHistory.push('/posts');
   }
 
   postItem(post, index) {
     return <div key={index}>{post.Text}</div>;
-  }
-
-  revealStatus() {
-    this.setState({revealStatus: true});
-  }
-
-  redirectToAddMemoryPost() {
-    browserHistory.push('/post');
   }
 
   /**
@@ -103,8 +109,8 @@ class LisitingMemoryPost extends React.Component {
                         type="submit"
                         value="Dela ett minne"
                         data-open="js-form-reveal"
-                        revealStatus={this.revealStatus}
                         onClick={this.redirectToAddMemoryPost}
+                        revealStatus={this.openReveal}
                       />
                   </div>
                 </div>
@@ -115,6 +121,7 @@ class LisitingMemoryPost extends React.Component {
                           post={this.state.post}
                           onSave={this.savePost}
                           onChange={this.updatePostState}
+                          onCloseReveal={this.onCloseReveal}
                           saving={this.state.saving}
                           errors={this.state.errors}
                         />
@@ -150,9 +157,10 @@ function getPostById(posts, id) {
 **/
 function mapStateToProps(state, ownProps) {
   const postId = ownProps.params.id; // from the path '/memorypost/:id'
+
   let post = {id: '', heading: '', postContent: '', imageSrc: null, date: '', location: ''};
 
-  //Create local constanst from the api. If api changes, only these constants needs to be changed
+  //Create local constanst from the api. If api changes, only the right side of the constants needs to be changed
   const localDataConstants = state.posts.map(post => {
     return {
       id: post.id,
@@ -168,8 +176,8 @@ function mapStateToProps(state, ownProps) {
     post = getPostById(state.posts, postId);
   }
   return {
-    // posts: state.posts, //From the rootReducer
-    posts: localDataConstants,
+    // posts: state.posts,
+    posts: localDataConstants, //From the rootReducer
     post: post
   };
 }

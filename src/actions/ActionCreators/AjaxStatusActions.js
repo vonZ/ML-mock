@@ -1,5 +1,7 @@
 import * as types from'Actions/ActionTypes/ActionTypes';
 
+console.log("Inne i AjaxStatusActions");
+
 export function beginAjaxCall() {
   return {type: types.BEGIN_AJAX_CALL};
 }

@@ -3,6 +3,8 @@ import memoryPostApi from 'mockApi/memoryPostApi';
 import {beginAjaxCall} from 'Actions/ActionCreators/AjaxStatusActions';
 import {ajaxCallError} from 'Actions/ActionCreators/AjaxStatusActions';
 
+console.log("Inne i PostActions");
+
 export function loadPostsSuccess(posts) {
   return {type: types.LOAD_POSTS_SUCCESS, posts};
 }
