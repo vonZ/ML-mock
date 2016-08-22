@@ -7,6 +7,7 @@ import AboutPage from './components/about/AboutPage';
 import LisitingMemoryPost from 'Container/ContainerListPostMemoryPosts';
 import ManageMemoryPost from 'Container/ContainerManageMemoryPost';
 import PostForm from 'Container/ContainerPostForm';
+import DetailMemoryPost from 'Container/ContainerDetailMemoryPost'
 
 export default (
   <Route path="/" component={App}>
@@ -16,6 +17,8 @@ export default (
     <Route path="posts" component={LisitingMemoryPost} />
     <Route path="add-post" component={LisitingMemoryPost} />
     <Route path="post/:id" component={LisitingMemoryPost} />
+    // MemoryPost detail
+    <Route path="postdetail/:id" component={DetailMemoryPost} />
 
     {/*<Route path="post" component={ManageMemoryPost} />
   <Route path="post/:id" component={ManageMemoryPost} />*/}

@@ -152,6 +152,10 @@ function getPostById(posts, id) {
   return null;
 }
 
+function openReveal() {
+  console.log("Open reveal");
+}
+
 /**
   Redux connect and related functions
 **/
@@ -174,6 +178,8 @@ function mapStateToProps(state, ownProps) {
 
   if (postId && state.posts.length > 0) {
     post = getPostById(state.posts, postId);
+    console.log("postId: ", postId);
+    openReveal();
   }
   return {
     // posts: state.posts,

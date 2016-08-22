@@ -21,9 +21,7 @@ const PostListRow = ({post}) => {
                                </div>
                            </div>
                        </div>
-                       <Link to={'/post/' + post.id}>
-                         <div className={cardLayout ? 'background-image' : 'background-image background-image--s'} style={bgImgStyle}></div>
-                       </Link>
+                       <div className={cardLayout ? 'background-image' : 'background-image background-image--s'} style={bgImgStyle}></div>
                    </div>
                </div>
                <div className={cardLayout ? 'hidden' : null}>
@@ -53,7 +51,8 @@ const PostListRow = ({post}) => {
                              <Link to={'/post/' + post.id} data-open="js-form-reveal">Redigera</Link>
                          </div>
                          <div className="column post-container__column">
-                             <a data-open="post-reveal" data-url="/Resources/Constants/PostItemMock.json" className="js-async-ajax">Läs mer</a>
+                           <Link to={'/postdetail/' + post.id}>Läs mer</Link>
+                           {/*<a data-open="post-reveal" data-url="/Resources/Constants/PostItemMock.json" className="js-async-ajax">Läs mer</a>*/}
                          </div>
                      </div>
                  </div>
