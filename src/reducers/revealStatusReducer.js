@@ -1,8 +1,6 @@
 import * as types from 'Actions/ActionTypes/ActionTypes';
 import initialState from 'Reducers/initialState';
 
-console.log("Inne i revealStatusReducer");
-
 export default function revealStatusReducer(state = initialState.revealOpen, action) {
   switch (action.type) {
     case types.OPEN_REVEAL:

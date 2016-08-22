@@ -2,8 +2,6 @@
 import * as types from 'Actions/ActionTypes/ActionTypes';
 import initialState from 'Reducers/initialState';
 
-console.log("Inne i postReducer");
-
 export default function postReducer(state = initialState.posts, action) {
   switch (action.type) {
     case types.LOAD_POSTS_SUCCESS:
