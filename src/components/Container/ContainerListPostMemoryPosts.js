@@ -83,6 +83,7 @@ class LisitingMemoryPost extends React.Component {
   redirect() {
     this.setState({saving: false});
     this.setState({revealStatus: false});
+    toastr.success('Reveal closed');
     console.log("revealStatus: ", this.state.revealStatus);
     toastr.success('Post was sucessfully saved');
     browserHistory.push('/posts');
@@ -104,7 +105,7 @@ class LisitingMemoryPost extends React.Component {
             <div className="columns">
               <div className="align-center">
                 <div className="align-center small-up-6 medium-up-6 large-up-6 row">
-                  <div className="column text-center padding-v-2">
+                  <div className="text-center padding-v-2">
                       <input
                         type="submit"
                         value="Dela ett minne"

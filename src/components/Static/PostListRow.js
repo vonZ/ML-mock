@@ -2,9 +2,10 @@ import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
 const PostListRow = ({post}) => {
-  const bgImgStyle = {
+  const backgroundImage = {
     backgroundImage: 'url(' + post.imageSrc + ')'
   }
+  const dataOriginal = post.imageSrc;
   const cardLayout = false;
   return (
       <div className="column">
@@ -21,7 +22,11 @@ const PostListRow = ({post}) => {
                                </div>
                            </div>
                        </div>
-                       <div className={cardLayout ? 'background-image' : 'background-image background-image--s'} style={bgImgStyle}></div>
+                       <div
+                         className={cardLayout ? 'lazy background-image' : 'lazy background-image background-image--s'}
+                         style={backgroundImage}
+                         data-original={dataOriginal}>
+                       </div>
                    </div>
                </div>
                <div className={cardLayout ? 'hidden' : null}>

@@ -9,6 +9,7 @@ var timerAndImageLoader = require('foundation/foundation.util.timerAndImageLoade
 var orbit = require('foundation/foundation.orbit');
 var reveal = require('foundation/foundation.reveal');
 var datepicker = require('nodeModulesPath/foundation-datepicker/js/foundation-datepicker');
+var lazyload = require('nodeModulesPath/jquery-lazyload/jquery.lazyload');
 var customRevealModal = require('GlobalExtensions/CustomRevealModal/CustomRevealModal');
 
 $.fn.foundation = foundation;
@@ -31,12 +32,17 @@ $(document).ready(function () {
           });
     });
 
-
+    // Datepicker
     $(function () {
         $('.js-datepicker').fdatepicker({
             format: 'mm-dd-yyyy',
             disableDblClickSelection: true
         });
+    });
+
+    // Lazy load
+    $("div.lazy").lazyload({
+      effect : "fadeIn"
     });
 
 

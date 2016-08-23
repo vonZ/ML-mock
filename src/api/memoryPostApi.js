@@ -60,7 +60,6 @@ const generateId = (post) => {
   return replaceAll(post.heading, ' ', '-');
 };
 
-
 class PostApi {
 
   //Get all posts
